@@ -1,0 +1,28 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h2>Car</h2>
+    </mat-card-title>
+  </mat-card-header>
+  <form (submit)="saved.emit(selectedCar)">
+    <mat-card-content>
+      <mat-form-field>
+        <input matInput placeholder="Model" [(ngModel)]="selectedCar.model" type="text" name="model">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Make" [(ngModel)]="selectedCar.make" type="text" name="make">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Year" [(ngModel)]="selectedCar.year" type="text" name="year">
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button type="submit" color="primary">
+        Save
+      </button>
+      <button  mat-raised-button type="button" color="accent" (click)="cancelled.emit(selectedCar)">
+        Cancel
+      </button>
+    </mat-card-actions>
+  </form>
+</mat-card>

@@ -1,0 +1,25 @@
+<div class="list-grid">
+  <mat-card *ngFor="let car of cars">
+    <mat-card-header>
+      <mat-card-title>
+        <h2>{{car.model}}</h2>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item>
+          <h4 mat-line>{{car.make}}</h4>
+          <h4 mat-line>{{car.year}}</h4>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+    <mat-card-actions>
+      <button  mat-raised-button color="primary"
+              (click)="selected.emit(car)">Select
+      </button>
+      <button mat-raised-button color="accent"
+              (click)="deleted.emit(car)">Delete
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

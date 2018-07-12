@@ -1,0 +1,14 @@
+<div class="wrapper">
+  <div class="details-grid">
+    <app-car-detail [currentCar]="currentCar"
+                     (cancelled)="cancel($event)"
+                     (saved) = "save($event)">
+    </app-car-detail>
+  </div>
+  <div class="list-grid">
+    <app-car-list [cars]="cars"
+                  (selected)="selectCar($event)"
+                  (deleted)="deleteCar($event)">
+    </app-car-list>
+</div>
+</div>
